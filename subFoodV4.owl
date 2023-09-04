@@ -209,7 +209,6 @@
     <!-- http://purl.obolibrary.org/obo/RO_0001000 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0001000">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/subFoodV2#contains"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001015"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411324"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
@@ -297,6 +296,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/subFoodV2#has_allergic_trigger">
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/subFoodV2#is_triggered_by"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001002"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/FOODON_00004081"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/subFoodV2#allergy"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has allergic trigger</rdfs:label>
@@ -316,6 +316,7 @@
     <!-- http://www.semanticweb.org/subFoodV2#has_member -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/subFoodV2#has_member">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/subFoodV2#memberOf"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/FOODON_00004082"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/subFoodV2#ingredient_specification"/>
         <rdfs:label>has member</rdfs:label>
@@ -339,6 +340,14 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/subFoodV2#is_triggered_by">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is trigerred by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/subFoodV2#memberOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/subFoodV2#memberOf">
+        <rdfs:label>member of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1570,32 +1579,6 @@
 * derives from &apos;seed, skin present, germ present&apos; (http://purl.obolibrary.org/obo/FOODON_03420133)
         </rdfs:comment>
         <rdfs:label xml:lang="en">sesame seed (whole)</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/FOODON_03310729 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03310729">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001002"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411322"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
-        <oboInOwl:hasDbXref>SUBSET_SIREN:F10729</oboInOwl:hasDbXref>
-        <oboInOwl:inSubset>subset_siren</oboInOwl:inSubset>
-        <rdfs:comment xml:lang="en">SIREN DB annotation:
-* has quality &apos;liquid, low viscosity, with no visible particles&apos; (http://purl.obolibrary.org/obo/FOODON_03430123)
-* derives from &apos;seed, skin removed, germ removed (endosperm)&apos; (http://purl.obolibrary.org/obo/FOODON_03420208)
-* formed as a result of &apos;alcohol fermentation process&apos; (http://purl.obolibrary.org/obo/FOODON_03460232)
-* formed as a result of &apos;curing or aging process&apos; (http://purl.obolibrary.org/obo/FOODON_03460253)
-* has substance added  &apos;sugar or sugar syrup added&apos; (http://purl.obolibrary.org/obo/FOODON_03460136)
-        </rdfs:comment>
-        <rdfs:label xml:lang="en">mirin japanese</rdfs:label>
     </owl:Class>
     
 
@@ -2918,7 +2901,7 @@ Request that IAO either clarify these or change definitions not to use them</rdf
 
     <owl:Class rdf:about="http://www.semanticweb.org/subFoodV2#sesame_allergy">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/subFoodV2#allergy"/>
-        <rdfs:label xml:lang="en">seasame allergy</rdfs:label>
+        <rdfs:label xml:lang="en">sesame allergy</rdfs:label>
     </owl:Class>
     
 
@@ -3193,7 +3176,6 @@ Request that IAO either clarify these or change definitions not to use them</rdf
         <has_member rdf:resource="http://www.semanticweb.org/subFoodV2#boneless_skinless_chicken_breasts_ingredient_specification"/>
         <has_member rdf:resource="http://www.semanticweb.org/subFoodV2#dry_chili_flakes_ingredient_specification"/>
         <has_member rdf:resource="http://www.semanticweb.org/subFoodV2#light_soy_souce_ingredient_specification"/>
-        <has_member rdf:resource="http://www.semanticweb.org/subFoodV2#mirin_ingredient_specification"/>
         <has_member rdf:resource="http://www.semanticweb.org/subFoodV2#sesame_seeds_ingredient_specification"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">healthy sesame chicken ingredient set</rdfs:label>
     </owl:NamedIndividual>
@@ -3206,6 +3188,7 @@ Request that IAO either clarify these or change definitions not to use them</rdf
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/FOODON_00004081"/>
         <acceptable_In rdf:resource="http://www.semanticweb.org/subFoodV2#meat_diet"/>
         <has_allergic_trigger rdf:resource="http://www.semanticweb.org/subFoodV2#gluten_allergy"/>
+        <has_allergic_trigger rdf:resource="http://www.semanticweb.org/subFoodV2#seasame_allergy"/>
         <unacceptable_In rdf:resource="http://www.semanticweb.org/subFoodV2#gluten_free_diet"/>
         <unacceptable_In rdf:resource="http://www.semanticweb.org/subFoodV2#vegan_diet"/>
         <unacceptable_In rdf:resource="http://www.semanticweb.org/subFoodV2#vegetarian_diet"/>
@@ -3251,25 +3234,6 @@ Request that IAO either clarify these or change definitions not to use them</rdf
     
 
 
-    <!-- http://www.semanticweb.org/subFoodV2#mirin_ingredient_specification -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/subFoodV2#mirin_ingredient_specification">
-        <rdf:type rdf:resource="http://www.semanticweb.org/subFoodV2#ingredient_specification"/>
-        <is_about rdf:resource="http://www.semanticweb.org/subFoodV2#mirin_japanese"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mirin ingredient specification</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/subFoodV2#mirin_japanese -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/subFoodV2#mirin_japanese">
-        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/FOODON_03310729"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mirin japanese</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/subFoodV2#olive_oil_ingredient_specification -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/subFoodV2#olive_oil_ingredient_specification">
@@ -3304,6 +3268,7 @@ Request that IAO either clarify these or change definitions not to use them</rdf
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/subFoodV2#panko_breadcrumbs_ingredient_specification">
         <rdf:type rdf:resource="http://www.semanticweb.org/subFoodV2#ingredient_specification"/>
         <obo:RO_0001000 rdf:resource="http://www.semanticweb.org/subFoodV2#wheat_plant"/>
+        <has_allergic_trigger rdf:resource="http://www.semanticweb.org/subFoodV2#gluten_allergy"/>
         <is_about rdf:resource="http://www.semanticweb.org/subFoodV2#wheat_bread_crumbs"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">panko breadcrumbs ingredient specification</rdfs:label>
     </owl:NamedIndividual>
